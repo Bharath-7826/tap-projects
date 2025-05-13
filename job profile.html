@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Job Application Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      padding: 20px;
+    }
+    h2 {
+      text-align: center;
+    }
+    form {
+      background: #e0e0e0;
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+      border-radius: 5px;
+    }
+    fieldset {
+      border: none;
+      margin-bottom: 20px;
+    }
+    legend {
+      font-weight: bold;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      box-sizing: border-box;
+    }
+    .inline {
+      width: auto;
+      margin-right: 10px;
+    }
+    .row {
+      display: flex;
+      gap: 10px;
+    }
+    .row > div {
+      flex: 1;
+    }
+    .checkbox-group label {
+      font-weight: normal;
+      display: inline;
+      margin-right: 15px;
+    }
+    .actions {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .actions input {
+      padding: 10px 20px;
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Job Application Form</h2>
+  <form>
+
+    <!-- Personal Information -->
+    <fieldset>
+      <legend>Personal Information</legend>
+      <div class="row">
+        <div>
+          <label for="fname">First Name*</label>
+          <input type="text" id="fname" required>
+        </div>
+        <div>
+          <label for="lname">Last Name*</label>
+          <input type="text" id="lname" required>
+        </div>
+      </div>
+
+      <label for="dob">Date of Birth</label>
+      <input type="date" id="dob">
+
+      <label>Gender</label>
+      <input type="radio" name="gender" value="male" class="inline"> Male
+      <input type="radio" name="gender" value="female" class="inline"> Female
+      <input type="radio" name="gender" value="other" class="inline"> Other
+
+      <label for="photo">Profile Picture</label>
+      <input type="file" id="photo">
+    </fieldset>
+
+    <!-- Contact Information -->
+    <fieldset>
+      <legend>Contact Information</legend>
+      <label for="email">Email*</label>
+      <input type="email" id="email" required>
+
+      <label for="phone">Phone Number*</label>
+      <input type="tel" id="phone" pattern="[0-9]{10}" placeholder="10-digit number" required>
+
+      <label for="address">Address</label>
+      <textarea id="address" rows="2"></textarea>
+
+      <label for="country">Country</label>
+      <select id="country">
+        <option>India</option>
+        <option>USA</option>
+        <option>UK</option>
+        <option>Other</option>
+      </select>
+    </fieldset>
+
+    <!-- Education Background -->
+    <fieldset>
+      <legend>Education Background</legend>
+      <label for="qualification">Highest Qualification</label>
+      <select id="qualification">
+        <option>Graduate</option>
+        <option>Post Graduate</option>
+        <option>PhD</option>
+        <option>Other</option>
+      </select>
+
+      <label for="specialization">Specialization</label>
+      <input type="text" id="specialization">
+
+      <label for="gradYear">Year of Graduation</label>
+      <input type="text" id="gradYear">
+    </fieldset>
+
+    <!-- Job Preferences -->
+    <fieldset>
+      <legend>Job Preferences</legend>
+      <label for="role">Preferred Role</label>
+      <input type="text" id="role">
+
+      <label for="salary">Expected Salary</label>
+      <input type="text" id="salary">
+
+      <label>Preferred Locations</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" class="inline"> Bangalore</label>
+        <label><input type="checkbox" class="inline"> Delhi</label>
+        <label><input type="checkbox" class="inline"> Remote</label>
+        <label><input type="checkbox" class="inline"> Pune</label>
+      </div>
+
+      <label><input type="checkbox" class="inline"> Willing to Relocate?</label>
+    </fieldset>
+
+    <!-- Create Account -->
+    <fieldset>
+      <legend>Create Account</legend>
+      <label for="password">Password*</label>
+      <input type="password" id="password" required placeholder="Min 6 characters">
+
+      <label for="confirm">Confirm Password*</label>
+      <input type="password" id="confirm" required>
+    </fieldset>
+
+    <!-- Resume Upload -->
+    <fieldset>
+      <legend>Resume</legend>
+      <label for="resume">Upload Resume (PDF only)*</label>
+      <input type="file" id="resume" accept="application/pdf" required>
+    </fieldset>
+
+    <!-- Agreement -->
+    <fieldset>
+      <label><input type="checkbox" required class="inline"> I agree to the terms and conditions*</label>
+    </fieldset>
+
+    <!-- Actions -->
+    <div class="actions">
+      <input type="submit" value="Submit Application">
+      <input type="reset" value="Reset Form">
+    </div>
+
+  </form>
+
+</body>
+</html>
